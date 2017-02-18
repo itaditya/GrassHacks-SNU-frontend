@@ -1,0 +1,78 @@
+<!--
+    <pre-loader ng-hide="isLoaded"></pre-loader>
+-->
+<base-wrap/>
+<h3>
+    <i class="fa fa-angle-right"></i>
+    Home
+</h3>
+<div class="row mt landing">
+    <div class="col-lg-12">
+        <div class="row club-row">
+            <div class="col-xs-12 mb">
+                <!-- WHITE PANEL - TOP USER -->
+                <div class="white-panel bg-transparent">
+                    <div class="white-header bg-blue header-title">
+                        <h5 class="text-white">Clubs</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-4 mb" ng-repeat="club in clubs" ng-switch="$index">
+                            <div class="content-panel pn" style="height: 218px;padding-bottom: 0;">
+                                <div id="spotify" style="background-image:url(/assets/img/clubs/{{ club.title }}.jpg)">
+                                    <div class="col-xs-4 col-xs-offset-8">
+                                        <a class="btn btn-sm btn-theme03 mt pull-right" ng-href="/club/{{ club.title }}">
+                                            <i class="fa fa-plus"></i>
+                                            View
+                                        </a>
+                                    </div>
+                                    <div class="sp-title">
+                                        <h3 class="text-capitalize ml">{{ club.title }} club</h3>
+                                    </div>
+                                    <div class="play">
+                                        <!-- <i class="fa fa-play-circle"></i> -->
+                                        <i class="fa fa-code" ng-switch-when="0"></i>
+                                        <i class="fa fa-laptop" ng-switch-when="1"></i>
+                                        <i class="fa fa-github" ng-switch-when="2"></i>
+                                        <i class="fa fa-pencil" ng-switch-when="3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 mb">
+                <!-- WHITE PANEL - TOP USER -->
+                <div class="white-panel bg-transparent">
+                    <div class="white-header bg-orange header-title">
+                        <h5 class="text-white">Ongoing Events</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 mb" ng-repeat="event in events">
+                <div class="content-panel">
+                    <div id="profile-01" class="bg-grey" style="background-image: url('{{ event.image_url }}')">
+                        <h3>{{ event.title | uppercase }}</h3>
+                    </div>
+                    <a ng-href="/events/{{ event.id }}">
+                        <div class="profile-01 centered">
+                            <p>View Event</p>
+                        </div>
+                    </a>
+                    <div class="centered">
+                        <h6>
+                            <i class="fa fa-file-text"></i>
+                            <br/>
+                            <h6>{{ event.desc }}</h6>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</base-wrap>

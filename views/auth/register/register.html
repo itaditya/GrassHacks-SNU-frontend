@@ -1,0 +1,82 @@
+<!--
+    <pre-loader ng-hide="isLoaded"></pre-loader>
+-->
+<div id="register-page">
+    <div class="container">
+        <form class="form-login" name="registerForm" ng-submit="register(registerForm)" novalidate>
+            <h2 class="form-login-heading">sign up now</h2>
+            <div class="login-wrap">
+                <div class="form-group" ng-class="{'has-success': registerForm.Name.$valid,'has-error': registerForm.Name.$dirty && registerForm.Name.$invalid}">
+                    <input type="text" name="Name" class="form-control" ng-model="user.name" placeholder="Name" autofocus required/>
+                    <span class="form-text text-muted ml" ng-show="registerForm.Name.$dirty && registerForm.Name.$error.required">Name is Required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-success': registerForm.Email.$valid,'has-error': registerForm.Email.$dirty && registerForm.Email.$invalid}">
+                    <input type="email" name="Email" class="form-control" ng-model="user.email" placeholder="Email" autofocus required/>
+                    <span class="form-text text-muted ml" ng-show="registerForm.Email.$dirty && registerForm.Email.$error.email">Invalid Email</span>
+                    <span class="form-text text-muted ml" ng-show="registerForm.Email.$dirty && registerForm.Email.$error.required">Email is Required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-success': registerForm.Password.$valid,'has-error': registerForm.Password.$dirty && registerForm.Password.$invalid}">
+                    <input type="password" name="Password" class="form-control" ng-model="user.password" placeholder="Password" required ng-minlength="6"/>
+                    <span class="form-text text-muted ml" ng-show="registerForm.Password.$dirty && registerForm.Password.$error.required">Password is Required</span>
+                    <span class="form-text text-muted ml" ng-show="registerForm.Password.$dirty && registerForm.Password.$error.minlength">Password must be atleast 6 characters</span>
+                </div>
+                <div class="form-group" ng-class="{'has-success': registerForm.ConfirmPassword.$valid && user.password_confirmation == user.password,'has-error': registerForm.ConfirmPassword.$dirty && (registerForm.ConfirmPassword.$invalid || user.password_confirmation != user.password) }">
+                    <input type="password" name="ConfirmPassword" class="form-control" ng-model="user.password_confirmation" placeholder="ConfirmPassword" required ng-minlength="6"/>
+                    <span class="form-text text-muted ml" ng-show="registerForm.ConfirmPassword.$dirty && registerForm.ConfirmPassword.$error.required">Confirm Password is Required</span>
+                    <span class="form-text text-muted ml" ng-show="registerForm.ConfirmPassword.$valid && user.password_confirmation != user.password">Passwords doesn't Match {{user.password_confirmation}}</span>
+                </div>
+                <label class="checkbox">
+                    <span class="pull-right">
+                        <a data-toggle="modal" href="#forgotPasswordModal">Forgot Password?</a>
+                    </span>
+                </label>
+                <button class="btn btn-theme btn-block" href="/" type="submit" ng-disabled="registerForm.$invalid || isChecking">
+                    <i class="fa fa-lock" ng-hide="isChecking"></i>
+                    <i class="fa fa-spinner fa-pulse fa-fw" ng-show="isChecking"></i>
+                    <span ng-hide="registerForm.$invalid || isChecking">SIGN UP</span> 
+                </button>
+                <hr/>
+                <div class="login-social-link centered">
+                    <p>or you can sign in via your social network</p>
+                    <button class="btn btn-facebook" type="submit">
+                        <i class="fa fa-facebook"></i>
+                        Facebook
+                    </button>
+                    <!-- <button class="btn btn-twitter" type="submit">
+                        <i class="fa fa-twitter"></i>
+                        Twitter
+                    </button> -->
+                    <button class="btn btn-danger" type="submit">
+                        <i class="fa fa-google"></i>
+                        Google +
+                    </button>
+                </div>
+                <div class="registration">
+                    Already have an account ?
+                    <br/>
+                    <a class="" href="/login">Sign In</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal -->
+<div id="forgotPasswordModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Forgot Password ?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Enter your e-mail address below to reset your password.</p>
+                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix"/>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                <button class="btn btn-theme" type="button">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal -->

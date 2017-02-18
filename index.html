@@ -1,0 +1,89 @@
+<!Doctype html>
+<html lang="en" ng-app="ClubPortal">
+    <head>
+        <meta charset="UTF-8"/>
+        <base href="/"/>
+        <title>ClubPortal</title>
+        <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Source+Code+Pro" rel="stylesheet"/>
+        <!-- Bootstrap core CSS -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
+        <!--external css-->
+        <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="/assets/js/gritter/css/jquery.gritter.css" rel="stylesheet"/>
+        <!-- <link href="/vendor/angularjs-datepicker/dist/angular-datepicker.min.css" rel="stylesheet"/> -->
+        <link rel="stylesheet" href="/vendor/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+        <link href="/assets/lineicons/style.css" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/style.css" rel="stylesheet"/>
+        <link href="/assets/css/style-responsive.css" rel="stylesheet"/>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- Custom CSS-->
+        <link href="/assets/css/preloader.css" rel="stylesheet"/>
+        <link href="/assets/css/main.css" rel="stylesheet"/>
+        <style type="text/css" media="screen">
+            ul.sidebar-menu li a:hover{
+                background: rgba(42, 44, 44, 0.54);
+            }   
+        </style>
+    </head>
+    <body ng-cloak>
+        <!-- Route Content -->
+        <div ng-view ng-cloak></div>
+        <!-- Vendor -->
+        <script src="/vendor/angular/angular.min.js"></script>
+        <!-- <script src="/vendor/jquery/dist/jquery.min.js"></script> -->
+        <script src="/assets/js/jquery.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/vendor/moment/min/moment.min.js"></script>
+        <script src="/vendor/angular-route/angular-route.min.js"></script>
+        <script src="/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="/vendor/angular-permission/dist/angular-permission.min.js"></script>
+        <script src="/vendor/angular-permission/dist/angular-permission-ng.min.js"></script>
+        <script src="/vendor/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script src="/vendor/angular-cookie/angular-cookie.min.js"></script>
+        <script src="/vendor/ng-token-auth/dist/ng-token-auth.js"></script>
+        <script src="/vendor/ng-file-upload/ng-file-upload-all.min.js"></script>
+        <script src="/vendor/ng-scrollto/ng-scrollto.js"></script>
+        <!-- <script src="/vendor/angularjs-datepicker/dist/angular-datepicker.min.js"></script> -->
+        <script src="/vendor/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+        <script src="/vendor/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+        <script src="/vendor/angular-timer/dist/angular-timer.min.js"></script>
+        <script src="/vendor/humanize-duration/humanize-duration.js"></script>
+        <script src="/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+        <script src="/vendor/ng-scrollto/jquery.scrollintoview.min.js"></script>
+        <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="/assets/js/jquery.backstretch.min.js"></script>
+        <script src="/assets/js/jquery.nicescroll.js"></script>
+        <script src="/assets/js/gritter/js/jquery.gritter.js"></script>
+        <script src="/assets/js/gritter-conf.js"></script>
+        <!--common script for all pages-->
+        <!-- <script src="/assets/js/common-scripts.js"></script> -->
+        <!-- Custom Js-->
+        <script src="/views/module.js"></script>
+        <script src="/views/directives.js"></script>
+        <script src="/views/partials/blankCtrl.js"></script>
+        <script src="/views/auth/module.js"></script>
+        <script src="/views/landing/landingCtrl.js"></script>
+        <script src="/views/clubs/module.js"></script>
+        <script src="/views/clubs/clubCtrl.js"></script>
+        <script src="/views/events/module.js"></script>
+        <script src="/views/events/eventsFactory.js"></script>
+        <script src="/views/events/eventsCtrl.js"></script>
+        <script src="/views/events/view/viewCtrl.js"></script>
+        <script src="/views/events/create/createCtrl.js"></script>
+        <script src="/views/events/edit/editCtrl.js"></script>
+        <script src="/views/auth/authFactory.js"></script>
+        <script src="/views/auth/login/loginCtrl.js"></script>
+        <script src="/views/auth/register/registerCtrl.js"></script>
+        <script src="/views/arena/module.js"></script>
+        <script src="/views/arena/arenaFactory.js"></script>
+        <script src="/views/arena/quiz/quizCtrl.js"></script>
+    </body>
+</html>
